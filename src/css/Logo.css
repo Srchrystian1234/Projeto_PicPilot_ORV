@@ -1,0 +1,34 @@
+.Orv-logo{
+    display: flex;
+    width: 100%;
+    flex-direction:column ;
+    
+}
+
+ img{
+    width: 200px;
+    height: 70px;
+    margin-top: 20px;
+    margin-left:125px ;
+    
+    
+}
+.borda-gradient{
+    border-bottom: 3px solid black;
+    height: px;
+    
+
+}
+.container-caixa-login{
+    width:463px;
+    height:382px;
+    border-radius: 43px;
+    background: #d9d9d9;
+   /* border: 1px solid black;*/
+    box-shadow: 0 8px 8px 0px #000;
+  
+    
+  
+    
+  
+  }
