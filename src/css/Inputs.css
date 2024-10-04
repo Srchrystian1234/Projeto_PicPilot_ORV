@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 .labelNome{
     text-align: center;
@@ -18,6 +19,7 @@
     font-size: 15px;
     font-family: "Lato", sans-serif;
     font-weight: bold;
+    border: none;
 }
 .input-nome{
     margin-top:1px ;
@@ -29,11 +31,13 @@
     opacity: 50%;
     box-shadow:0 7px 2px 0 black;
     text-decoration: none;
+    border: none;
     
 }
 .input-nome:hover , .input-nome:focus{
     text-decoration: none;
     background: white;
+    border: none;
 }
 .labelSenha{
     text-align: center;
@@ -53,6 +57,7 @@
     opacity: 50%;
     box-shadow:0 7px 2px 0 black;
     text-decoration: none;
+    border: none;
     
 }
 .input-senha:hover , .input-senha:focus{
@@ -61,9 +66,80 @@
     border: none;
 }
 
-.input-senha{
-    width: 302px;
-    height:43px;
+
+
+.link{
+    display: flex;
+    justify-content: end;
+    height: 17px;
+    
+
+    
+    
+}
+.link-esqueci{
+    text-decoration: none; 
+    font-family: "Lato", sans-serif;
+    color: #8e8888;
+    width: 198px;
+    font-size: 12px;
+}
+.link-esqueci:hover{
+    text-decoration: underline;
+    font-family: "Lato", sans-serif;
+    
+}
+.button{
+    height: 60px;
+    width: 125px;
+    display: flex;
+    justify-content: center;
+  /*  border: 1px solid black;*/
+    margin: auto auto;
+    margin-top: 20px;
+}
+.button-Entrar{
+    background-color: #0e6f6f;
+    color: #d9d9d9;
+    font-family: "lato";
+    border: none;
+    height: 48px;
+    width: 117px;
     border-radius: 21.5px;
+    box-shadow: 0 4px 4px 0 black;
+}
+.button-Entrar:hover{
+    background-color: #169e9e;
+    color: #d9d9d9;
+    font-family: "lato";
+    border: none;
+    height: 48px;
+    width: 117px;
+    border-radius: 21.5px;
+}
+.cadastro{
+    margin-top: 5px;
+   
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    font-family: "lato";
+
+}
+p{
+  width: 280px;text-align: center;
+ /* border: 1px solid black;*/
+}
+.cadastro a{
+    text-decoration:none;
+    color: #524f4f;
+    font-weight: bolder;
+    
+}
+.cadastro a:hover{
+    text-decoration: underline;
+    color: #524f4f;
+    font-weight: bolder;
     
 }
