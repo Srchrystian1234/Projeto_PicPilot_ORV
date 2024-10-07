@@ -32,7 +32,8 @@
     box-shadow:0 7px 2px 0 black;
     text-decoration: none;
     border: none;
-    
+    outline: none;
+    padding-left: 10px;
 }
 .input-nome:hover , .input-nome:focus{
     text-decoration: none;
@@ -58,12 +59,16 @@
     box-shadow:0 7px 2px 0 black;
     text-decoration: none;
     border: none;
-    
+    outline: none;
+    padding-left: 10px;
+   
 }
 .input-senha:hover , .input-senha:focus{
     text-decoration: none;
-    background: white;
+    background:white;
     border: none;
+    
+   
 }
 
 
@@ -98,7 +103,7 @@
     margin: auto auto;
     margin-top: 20px;
 }
-.button-Entrar{
+.buttons{
     background-color: #0e6f6f;
     color: #d9d9d9;
     font-family: "lato";
@@ -108,7 +113,7 @@
     border-radius: 21.5px;
     box-shadow: 0 4px 4px 0 black;
 }
-.button-Entrar:hover{
+.buttons:hover{
     background-color: #169e9e;
     color: #d9d9d9;
     font-family: "lato";

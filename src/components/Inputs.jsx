@@ -13,7 +13,7 @@ export default function Inputs() {
             </div>
         </div>
         <div className='button'>
-            <button type="button" className="button-Entrar">Entrar</button>
+            <button type="button" className="buttons">Entrar</button>
         </div>
         <div className="cadastro">
             <p>Não tem sua conta? <a href="/cadastro">Inscreva-se</a></p>

@@ -14,7 +14,6 @@ function App() {
           <Routes>
                  <Route path="/" element={<Container/>} />
                  <Route path='/cadastro' element={<Cadastro/>}/>
-              
           </Routes>
     </BrowserRouter>
     
