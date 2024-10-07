@@ -9,7 +9,7 @@ export default function Inputs() {
             <label className='labelSenha' htmlFor="inputSenha">Senha</label>
             <input className='input-senha'id='inputSenha' type="text"/>
             <div className='link'>
-            <a className='link-esqueci' href="#">Esquece minha senha?</a>
+                <a className='link-esqueci' href="#">Esquece minha senha?</a>
             </div>
         </div>
         <div className='button'>
