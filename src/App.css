@@ -8,17 +8,25 @@
 
   
 }
-body{
-  
+#root{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   
   background-image: linear-gradient(to bottom,#0fc2c0 ,#0cabab,#008f8c,#015958,#023535 );
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  
+
 }
-.container-login{
+.container-caixa-login{
+  width:463px;
+  height:382px;
+  border-radius: 43px;
+  background: #d9d9d9;
+ /* border: 1px solid black;*/
+  box-shadow: 0 8px 8px 0px #000;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 

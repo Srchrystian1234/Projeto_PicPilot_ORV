@@ -1,13 +1,22 @@
 import './App.css'
-import Logo from './components/logo'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap'
+import Cadastro from './pages/Cadastro';
+import Container from './components/Container';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 function App() {
  
 
   return (
     <>
-    <div className="container-login">
-      <Logo/>
-      </div>
+    <BrowserRouter>
+          <Routes>
+                 <Route path="/" element={<Container/>} />
+                 <Route path='/cadastro' element={<Cadastro/>}/>
+          </Routes>
+    </BrowserRouter>
+    
     </>
   )
 }
