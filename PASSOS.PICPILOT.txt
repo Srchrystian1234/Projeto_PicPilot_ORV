@@ -1,0 +1,82 @@
+Projeto: PicPilot - seu gerenciador de fotos 
+
+ETAPA 1 - CRIAÇÃO DE TELA DE LOGIN E PAGINA DE CADASTRO 
+
+CRIAMOS DOIS LAYOUTS DE TELAS 
+ 
+ TELA 1 - LOGIN  
+ TELA 2 - PAGINA DE CADASTRO
+
+NESSA ETAPA UTILIZAMOS O FIGMA PARA CRIAÇÃO DO ESBORÇO DAS TELAS SUPRACITADAS 
+
+ETAPA 1.1 - CODANDO AS CONFIG BÁSICAS 
+
+- LINGUAGENS UTILIZADA: REACT.JS 
+
+------PAGINA APP.JSX -------
+
+NESSA PAGINA FOI FEITO UMA SERIE DE IMPORTAÇÕES, PARA ESTILIZAÇÃO, ROTAS E DEPENDENCIAS 
+
+-BOOTSTRAP (DESSA FERRAMENTA UTILIZOU-SE ICONES) 
+- CSS, PARA CAMADA DE ESTILIZAÇÃO DAS TELAS CRIADAS 
+- ROTAS  DE NAVEGAÇÃO  E LINK ENTRE COMPENENTES DO APP WEB (ROUTES)
+ 
+LINHAS DE CODIGOS DA PAGINA CITADA ACIMA 
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap'
+import Cadastro from './pages/Cadastro';
+import Container from './components/Container';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+function App() {
+ 
+  return (
+    <>
+      <BrowserRouter>
+            <Routes>
+                  <Route path="/" element={<Container/>} />
+                  <Route path='/cadastro' element={<Cadastro/>}/>
+            </Routes>
+      </BrowserRouter>
+    
+    </>
+  )
+}
+
+export default App
+
+
+------COMPENTES -------
+
+FOI CRIADO NESSA ETAPA A PASTA COMPENENTS QUE POSSUI: 
+
+1-CONTAINER.JSX
+2-INPUT.JSX 
+3-LOGO.JSX 
+
+NO COMPENENTE 1, CONTAINER, NELE POSSUI DUAS INSTANCIAS QUE SETAM OS DOIS OUTROS COMPONENTES.
+-CONTAINER 
+ENGLOBA AS INSTANCIAS DOS COMPONENTES INPUTS.JSX E LOGO.JSX 
+- COMPONENTE GERAL QUE ENGLOBA TODOS OS ATRIBUTOS DA PRIMEIRA TELA (LOGIN) 
+
+
+CODIGO DA PAGINA 
+
+
+import Inputs from './Inputs'
+import Logo from './Logo'
+import '../App.css'
+export default function Container() {
+  return (
+    
+        <div className='container-caixa-login'>
+            <Logo/>
+            <Inputs/>
+        </div>
+    
+  )
+}
+
+NO COMPENTE INPUTS.JSX 
+CRIAMOS UMA DIV GENERICA, LOGO EM SEGUIDA UMA DIV FILHO DENOMINADA LOGIN 
