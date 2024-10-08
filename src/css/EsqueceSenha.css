@@ -1,0 +1,100 @@
+.container-caixa-esquece{
+    width:463px;
+    height:470px;
+    border-radius: 43px;
+    background: #d9d9d9;
+   /* border: 1px solid black;*/
+    box-shadow: 0 8px 8px 0px #000;
+    display: flex;
+    flex-direction: column;
+    
+
+  }
+  .centralizar-redefinir{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+   
+    
+  }
+
+  .VoltarLogin{
+    height: 20px;
+    margin-top: 10px;
+  
+    
+    
+  }
+  .VoltarLogin a{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    opacity: 33%;
+    
+  }
+  
+  .VoltarLogin a:hover{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    opacity: 90%;
+  }
+
+  i.bi-arrow-left{
+    height: 40px;
+    width: 35px;
+    
+    
+  }
+  .redefiniTexto{
+    margin-top: 15px;
+    margin-left: 10px;
+    height: 90px;
+  }
+  .redefiniTextoPequeno{
+    margin-left: 10px;
+    margin-top: -3px;
+    display: flex;
+    justify-content: left;
+    width: 350px;
+    height: 65px;
+    
+  }
+  .redefiniTextoPequeno p{
+    text-align: left;
+    width: 340px;
+
+  }
+  .inputEmailSenha{
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+  .button-esquece{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .buttons-esquece{
+    margin-left: 10px;
+    background-color: #0e6f6f;
+    color: #d9d9d9;
+    font-family: "lato";
+    border: none;
+    height: 48px;
+    width: 302px;
+    border-radius: 21.5px;
+    box-shadow: 0 4px 4px 0 black;
+}
+
+  

@@ -5,6 +5,7 @@ import Cadastro from './pages/Cadastro';
 import Container from './components/Container';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import EsqueceSenha from './pages/EsqueceSenha';
 function App() {
  
   return (
@@ -13,6 +14,7 @@ function App() {
             <Routes>
                   <Route path="/" element={<Container/>} />
                   <Route path='/cadastro' element={<Cadastro/>}/>
+                  <Route path='/esquecesenha' element={<EsqueceSenha/>}/>
             </Routes>
       </BrowserRouter>
     
