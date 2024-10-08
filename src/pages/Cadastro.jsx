@@ -14,20 +14,20 @@ export default function Cadastro() {
 
                 <div className="inputIcon">
                     <i className='bi bi-person-fill'></i>
-                    <input className='input-nome1' type="text" name="" id="" placeholder='Nome completo' />
+                    <input className='input-nome1' type="text" name="nome1" id="nome1" placeholder='Nome completo' />
                  </div> 
 
                  <div className="inputIcon">
                     <i className='bi bi-envelope-fill'></i>
-                    <input className='input-email' type="email" name="" id="" placeholder='Email' />
+                    <input className='input-email' type="email" name="email" id="email" placeholder='Email' />
                   </div>   
                 <div className="inputIcon">
                     <i className='bi bi-lock-fill'></i>
-                    <input className='input-password' type="text" name="" id="" placeholder='Senha' />
+                    <input className='input-password' type="text" name="senha" id="senha1" placeholder='Senha' />
                 </div>   
                 <div className="inputIcon">
                     <i className='bi bi-lock-fill'></i>
-                    <input className='input-password-repeat' type="text" name="" id="" placeholder='Repete senha' />
+                    <input className='input-password-repeat' type="text" name="senhaRepete" id="senhaRepete" placeholder='Repete senha' />
                 </div>   
 
             </div>
