@@ -12,6 +12,8 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "^18.3.1",
@@ -22,6 +24,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
@@ -31,5 +35,18 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
     "vite": "^5.4.1"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Srchrystian1234/Projeto_PicPilot_ORV.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Srchrystian1234/Projeto_PicPilot_ORV/issues"
+  },
+  "homepage": "https://github.com/Srchrystian1234/Projeto_PicPilot_ORV#readme"
 }
