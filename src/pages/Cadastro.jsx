@@ -143,7 +143,7 @@ export default function Cadastro() {
             { //verificando se foi sucesso ou errado , e verifica se passou pela condicao ou nao, estatos final
              status.type ===  'error' ? <p style={{height:'50px'}} className='alert alert-danger text-align-center w-100 text-danger fw-bold' role='alert'>{status.mensagem}</p> :''
             }
-        </form>     
+        </form>      
       </div>
     
   )

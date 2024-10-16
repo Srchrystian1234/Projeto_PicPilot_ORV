@@ -1,0 +1,194 @@
+    **********************************
+    conectando frontend com back React
+
+    -----------------------------------
+
+    CTRL + D // ele seleciona mias de uma alinha em baixo da outra
+
+
+    //como passar os valores passandos no input pro servidor 
+
+    //primeiro passo pega os dados atualizados
+
+     biblioteca axios // npm install axios -- biblioteca que vai facilitar a conexao
+
+     criar pasta backend -- services
+
+     aqruivo -api.js
+      ele que vai conecta com api com backend
+
+      import axios from 'axios' 
+
+      const api = axios.create  //criando conexao com servidor 
+      ({
+            baseUrl:'http://locahost:3000' //loca aonde minha api ta o bakcend
+
+      }
+      )
+
+
+      export defaut api
+
+
+      vou no meu front e importo
+
+
+      primeira rota é rota usuario no node
+
+      vamos puxar na requesicao tipo get
+
+
+      vamos importa api
+
+      import api from '../../sercice/api'
+
+      proximo passo os dados vao vim do bando de dados
+
+       let users = [] //para pode atribuir um novo valor
+
+      async  function getUsers(){ //como tem que a fazer a conexao com banco de dados o fluxo de dados vai e volta , por isso precisar async 
+     users =   await api.get('/usuarios) //pegando na rota usuarios e vai na back e pega 
+            //precisa chamar a funcao aonde chamo?quando carregar
+        }
+
+        //usar o estado de useEffet pra pode chamar a funcao , quanod acontecer algo sempre vai no user effet , por isso precisar ser passado loca, ele sempre vai executar assim que a page abri
+
+    import {useEffet} from 'react'
+
+    simples react snippets instalacao //codigo pronto  
+
+    useEffet(()=>{
+        getUsers() //toda vez que o site abri ele vai ser executado ,ai ele vai no sevidor e vai trazer a variavel users
+    },[])
+
+
+eero do cors
+
+//por padrao o back nao aceita qualquer pagina acesse o conteudo , vamos configura o back end pra acessar o back end pra acess o servidor
+
+//vamos  backer end e vamos configuar
+
+vamos instalar um extensao pra funcionar
+
+npm install cors
+
+ app.use(cors()) // dessa forma qualquer frontend consegue acessar //caso queria o front espefico passa o url cors('https/:')
+
+//temso um problema os dados chegaram ,mas ele chegou como array
+
+async function getUsers(){
+    como esta vindo o data , nao podemos usar o users
+    criamos uma nova vairavels
+
+    const usersFromApi = await api.get('/usuarios') //apos chegar os dados vamos fazer o seguinte 
+
+    a constante e users la em cima  vamos fazer o seguinte
+
+    users = usersFromApi.data // so pra vim um array
+
+    //no react todas vez que tem um alteracao em uma vairavels e preciso colocar ela na tela o react nao deixa , o react visa o bom desempenho do codigo, a unica variavel que pode fazer alteracaoes no react é quando mudar a tela , sao os estados do react
+
+    //os estamos habilitado , eu alterei algo no estado do react ai sim ele consegue fazer alteracao
+
+    //react hooks
+
+    vamso trocar o users const pra users estados 
+
+
+    const [ users,setUsers] = usestate([]) //pra pode fazer a sentagem , as estrututa que esta sendo alimentada é array
+
+    toda vez que ele quiser fazer essa alteracao ele precisa fazer isso aqui 
+
+    em vez disso 
+     users = usersFromApi.data // so pra vim um array
+     ele vai fazer isso 
+
+     setUsers(userFromapi.data);
+
+    ja esta mostrando na tela os usuario ja cadastrados 
+
+
+    //agora vamos enviar os dados do dormulario quando o usuario digita na tela do front 
+
+     //vamos enviar pra o servidor , como eu faço isso usanso react
+
+     outro reat hook - useREf //vamos colocar o um elemento como referencia pra ele ,e depois epoga ro valor do elemento, por exemplo  pega o valor do input
+
+    importo o useRef from 'react
+
+    como fazer criar a referencia
+
+    const inputName = userREf()
+    const inputage = userREf()
+    const inputeMAIL = userREf()
+
+    //EU VOUI CONSEGURI QUARDAR O VALOR DENTRO DO function
+    QUEM VAI RECEBER ESSE VALOR
+
+    E NO INPUT REF={ InputName} // pra pode pegar o valores
+
+    //vamos criar uma nova funcao 
+
+    async function createUsers(){
+
+   // const userFromApi = awai api.get('/usuarios)//
+   
+
+    setUsers(usersFromApi.data) 
+    quando que ue quero cirar um usaruio uqnado clciar me cadastrados
+    //vamos colocar no button onclick={
+        createUsers
+    }
+    //ja temos as informoes dos inputs
+    
+
+     async function createUsers(){
+
+    awai api.post('/usuarios)// pq quermos enviar
+   
+
+    setUsers(usersFromApi.data) 
+   
+    input onclick={
+        createUsers
+    }
+
+    pode enviar os dados
+
+    await api.post('/usuarios', por aqui que passamos o que quermos {
+        name: inputName.current.value //pra pegar o valor atual
+        pra pegar o getUsers(); //pra carregar automatico
+
+    })
+
+    //vamos remover tambem
+
+    vamos fazer uma funcao 
+
+    async function deleteUsers(id){
+
+    precisamos do id tod 
+
+     await api.delete(`/usuario/${id}`)
+getUser();
+    }
+
+    <button onClick={tem que passar a funcao anonima pra pode passar o parametro()=>deleteUsers(user.id)}>
+}
+
+
+
+
+---------------dicas backend com node----------------
+
+
+    entender conceitos de bakc end e front end
+    criar nossa primiera api
+
+    conectar com um banco de dados 
+
+    query params/router params /body params
+
+    conectar com um banco de dados
+    metodos http
+    status http
