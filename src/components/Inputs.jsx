@@ -1,114 +1,89 @@
 import '../css/Logo.css'
 import '../css/Inputs.css'
-import { useState} from 'react'
+import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import api from '../../services/Api'; //conexao com bando de dados 
+
 export default function Inputs() {
+    const navigate = useNavigate(); //responsavel por retornar a tela de login apos o cadastro 
+    const inputName = useRef();//referenciando os resultado que esta vindo do nome
+    const inputPassword = useRef(); //referenciando os resultado que esta vindo do senha
+    const [status,setStatus]=useState({ //responsavel pela mensagem de sucesso e erro
+        type:'',
+        mensagem:''
+    }); // Estado para mensagens de status
 
-   const [user,setUser] = useState({ /* preenchimento do usuario e pra poder setar ele */ 
-        name:'', /*nome vazio pq ainda nao tem nada*/
-        password:'', //senha mesma coisa
-   });
+    
+    const Logan = async ()=>{ //funcao de logar com a conexao com o banco de dados 
+       
+        const isValid = validacaoLogin(); //validacao para ver se o campo nao esta em branco
 
-   const [status,setStatus] = useState({ //estado pra saber se foi preenchido ou nao o formulario
-        type:'', //se deu success ou error
-        mensagem:'' //mensagem de erro ou sucesso 
-   });
+        if(isValid !== true){  // Se a validação falhar, interrompe
+            return;
+        }
+        const name = inputName.current.value.trim();//instanciando 
+        const password = inputPassword.current.value.trim();
 
-   //recebendo os dados do formulario
-
-   const valueInput = (e) => setUser({...user, [e.target.name]: e.target.value}); //pegando os dados do formulario pelos inputs
-
-   //enviar os dados para o back-end
-
-   const enviarDados = async (e)=> { //quando clicar chama a funcao 
-    e.preventDefault(); //preventdefault pra nao recarregar a pagina
-
-    //antes de fazer a requisicao pro backend
-    //fazer uma condicao manual aqui , pq ainda nao fizemos conexao com banco de dados
-    if(!validacao()) return; //se for diferente de vdd a validacao para o processamento ele ja nao prosegue
-
-
-    const saveDataForm = true; //verificar se salvou com sucesso ou nao com sucesso 
-
-    //caso tenha sido salvo , vamos ver as condições
-
-    if(saveDataForm){ //caso for verdade ele vai executa essa ação
-        setStatus({ //caso for uscesso ele vai mostrar mensagem de sucesso na tela , que foi passado 
-            type:'success',
-            mensagem:'Usuario cadastrado com sucesso'
-        });
-        setUser({ //colocar o nome do usuario cadastrado e senha
-            name:'',
-            password:''
-        });
-    }else{ //caso nao for salvo no banco de dados e nao passar na validação
-        setStatus({
-            type:'error',
-            mensagem:'Erro: Usuario não cadastrado'
-        });
+        try{
+            //chamada a API para fazer o login
+            const response = await api.post('/login',{name,password});
+            
+            if(response.status === 200){
+                // Navegando para a página desejada após login bem-sucedido
+                navigate('/dashboard'); // Mude para a rota correta,caso senha a pessoa certa
+            }else{
+                setStatus({type:'error',mensagem:'Credencias incorretas !'}); //status de erro de credencias
+            }
+        }catch(error){
+            setStatus({type:'error',mensagem:'erro ao fazer o login , tentar novamente !'});
+            console.error('login error:', error);
+            console.log(error)
+        }
+        
     }
 
+    const validacaoLogin = ()=>{
+ // Obtém os valores dos campos de entrada e remove espaços em branco
+        const name = inputName.current.value.trim();
+        const password = inputPassword.current.value.trim();
 
-   }
+         // Verifica se o campo de nome está vazio
 
-   /* fazer a funcao de validacao */
-   function validacao(){ //fucnao de validacao 
-    //primeiro passei a  condicao pra ver se a user name é falsa , caos seja eu retorno setStatus com as mensagen de erro
-    const nome = user.name;
-    const senha = user.password;
-
-    nome.trim();
-    senha.trim();
-
-    nome.replace(/[^A-zÀ-ù\s]/gi,'');
-
-    if(!/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\s]+$/.test(nome)){
-        return setStatus({type:'error',mensagem:'Nome invalido'})
+        if(!name){
+            return setStatus({type:'error',mensagem:'Necessario  preencher o campo nome !'});
+        }
+        if(!password){
+            return  setStatus({type:'error',mensagem:'Necessario  preencher o campo senha!'});
+        } 
+  // Retorna true se ambos os campos estão preenchidos corretamente
+        return true;
     }
-    if(!nome){
-        return setStatus({type:'error',mensagem:'Necessario  preencher o campo nome !'});
-    }
-    if(!senha){
-        return  setStatus({type:'error',mensagem:'Necessario  preencher o campo senha!'});
-    } 
-    if(senha.length < 6){ 
-        return setStatus({type:'error', mensagem:'informe uma senha com no minimo 6 caracteres'})
-    }  
-   
-    //caso nao esta nenhum erro e campo preenchido nos retornamos o true
-
-        return true; //se estiver true , ele nao acessar o if !validade, passa direto
-   }
 
   return (
-    <div >
-        { //verificando se foi sucesso ou errado , e verifica se passou pela condicao ou nao, estatos final
-             status.type ===  'success' ? <p style={{height:'50px'}} className='alert alert-success text-align-center w-100' role='alert'>{status.mensagem}</p> :''
-       }
-       { //verificando se foi sucesso ou errado , e verifica se passou pela condicao ou nao, estatos final
-             status.type ===  'error' ? <p style={{height:'50px'}} className='alert alert-danger text-align-center w-100' role='alert'>{status.mensagem}</p> :''
-       }
-      
-        <form onSubmit={enviarDados} >
+        <form onSubmit={(e) => e.preventDefault()} >
             <div className='input-login'>
                 <label className='labelNome' htmlFor="inputNome">Nome</label>
-                <input  className='input-nome' name='name'onChange={valueInput} id='inputNome'  type="text"/>
+                <input  className='input-nome' name='name' id='inputNome' ref={inputName}  type="text"/>
                 <label className='labelSenha' htmlFor="inputSenha">Senha</label>
 
-                <input className='input-senha'id='inputSenha' type="password" onChange={valueInput} name='password' />
+                <input className='input-senha'id='inputSenha' type="password" ref={inputPassword} name='password' />
                 <div className='link'>
                     <a className='link-esqueci' href="/esquecesenha">Esquece minha senha?</a>
                 </div>
             
             </div>
             <div className='button'>
-                <button  type="submit" className="buttons">Entrar</button>
+                <button type='button' onClick={Logan} className="buttons">Entrar</button>
             </div>
+            {status.mensagem && (
+                <p className={`status-message ${status.type}`}>{status.mensagem}</p>
+            )}
             
             <div className="cadastro">
                 <p>Não tem sua conta? <a href="/cadastro">Inscreva-se</a></p>
             </div>
         </form>
        
-  </div>
+  
   )
 }
