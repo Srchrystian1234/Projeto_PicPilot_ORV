@@ -82,7 +82,7 @@ export default function Cadastro() {
         const repete = inputRepeatPas.current.value.trim();
         
     
-    
+    //ola mundo//
         nome.replace(/[^A-zÀ-ù\s]/gi,'');
         
         if(!nome){
