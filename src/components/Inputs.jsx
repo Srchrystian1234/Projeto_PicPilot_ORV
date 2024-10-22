@@ -6,7 +6,7 @@ import api from '../../services/Api'; //conexao com bando de dados
 
 export default function Inputs() {
     const navigate = useNavigate(); //responsavel por retornar a tela de login apos o cadastro 
-    const inputName = useRef();//referenciando os resultado que esta vindo do nome
+    const inputEmail = useRef();//referenciando os resultado que esta vindo do nome
     const inputPassword = useRef(); //referenciando os resultado que esta vindo do senha
     const [status,setStatus]=useState({ //responsavel pela mensagem de sucesso e erro
         type:'',
@@ -21,12 +21,12 @@ export default function Inputs() {
         if(isValid !== true){  // Se a validação falhar, interrompe
             return;
         }
-        const name = inputName.current.value.trim();//instanciando 
+        const email = inputEmail.current.value.trim();//instanciando 
         const password = inputPassword.current.value.trim();
 
         try{
             //chamada a API para fazer o login
-            const response = await api.post('/login',{name,password});
+            const response = await api.post('/login',{email,password});
             
             if(response.status === 200){
                 // Navegando para a página desejada após login bem-sucedido
@@ -44,12 +44,12 @@ export default function Inputs() {
 
     const validacaoLogin = ()=>{
  // Obtém os valores dos campos de entrada e remove espaços em branco
-        const name = inputName.current.value.trim();
+        const email = inputEmail.current.value.trim();
         const password = inputPassword.current.value.trim();
 
          // Verifica se o campo de nome está vazio
 
-        if(!name){
+        if(!email){
             return setStatus({type:'error',mensagem:'Necessario  preencher o campo nome !'});
         }
         if(!password){
@@ -62,8 +62,8 @@ export default function Inputs() {
   return (
         <form onSubmit={(e) => e.preventDefault()} >
             <div className='input-login'>
-                <label className='labelNome' htmlFor="inputNome">Nome</label>
-                <input  className='input-nome' name='name' id='inputNome' ref={inputName}  type="text"/>
+                <label className='labelNome' htmlFor="inputNome">Email</label>
+                <input  className='input-nome' name='name' id='inputNome' ref={inputEmail}  type="text"/>
                 <label className='labelSenha' htmlFor="inputSenha">Senha</label>
 
                 <input className='input-senha'id='inputSenha' type="password" ref={inputPassword} name='password' />
