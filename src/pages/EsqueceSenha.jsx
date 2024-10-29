@@ -19,7 +19,7 @@ export default function EsqueceSenha() {
                 <input className='input-nome' id='inputEmailSenha' type="email"/>
             </div>
             <div className="button-esquece">
-            <button type="button" className="buttons-esquece">Enviar link de recuperação</button>
+                <button type="button" className="buttons-esquece">Enviar link de recuperação</button>
             </div>
         </div>
     </div>

@@ -82,7 +82,7 @@ export default function Cadastro() {
         const repete = inputRepeatPas.current.value.trim();
         
     
-    //ola mun
+    
         nome.replace(/[^A-zÀ-ù\s]/gi,'');
         
         if(!nome){
@@ -118,35 +118,34 @@ export default function Cadastro() {
   return (
 
     <div className="container-cadastrar">
-            <Logo/>
-            
-        <form >
-                <div className="icon">
-                    <i className="bi bi-person-circle"></i>   
-                </div>
-                <div className="inputsCadastro">
+            <Logo/>  
+        <form>
+            <div className="icon">
+                <i className="bi bi-person-circle"></i>   
+            </div>
+            <div className="inputsCadastro">
                     <div className="inputIcon">
                         <i className='bi bi-person-fill'></i>
                         <input className='input-nome1' type="text" name="nome" id="nome"  placeholder='Nome completo' ref={inputName}/>
                     </div> 
-                <div className="inputIcon">
-                    <i className='bi bi-envelope-fill'></i>
-                    <input className='input-email' type="email" name="email" id="email" placeholder='Email' ref={inputEmail} />
-                  </div>   
-                <div className="inputIcon">
-                    <i className='bi bi-lock-fill'></i>
-                    <input className='input-password' type="password" name="senha" id="senha1" placeholder='Senha' ref={inputPassword} />
-                </div>   
-                <div className="inputIcon">
-                    <i className='bi bi-lock-fill'></i>
-                    <input className='input-password-repeat' type="password" name="senhaRepete"  id="senhaRepete" placeholder='Repete senha' ref={inputRepeatPas} />
-                </div>   
+                    <div className="inputIcon">
+                        <i className='bi bi-envelope-fill'></i>
+                        <input className='input-email' type="email" name="email" id="email" placeholder='Email' ref={inputEmail} />
+                    </div>   
+                    <div className="inputIcon">
+                        <i className='bi bi-lock-fill'></i>
+                        <input className='input-password' type="password" name="senha" id="senha1" placeholder='Senha' ref={inputPassword} />
+                    </div>   
+                    <div className="inputIcon">
+                        <i className='bi bi-lock-fill'></i>
+                        <input className='input-password-repeat' type="password" name="senhaRepete"  id="senhaRepete" placeholder='Repete senha' ref={inputRepeatPas} />
+                    </div>   
             </div>
             <div className='button'>
                 <button type='button' onClick={CreateUser} className="buttons">Cadastrar</button>
             </div>
             <div className="cadastro">
-            <p>Ja tenho conta? <a href="/">Login</a></p>
+                <p>Ja tenho conta? <a href="/">Login</a></p>
             </div>
             { //verificando se foi sucesso ou errado , e verifica se passou pela condicao ou nao, estatos final
              status.type ===  'success' ? <p style={{height:'50px'}} className='alert alert-success text-align-center text-success fw-bold w-100' role='alert'>{status.mensagem}</p> :''

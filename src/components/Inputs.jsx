@@ -71,15 +71,14 @@ export default function Inputs() {
                 <div className='link'>
                     <a className='link-esqueci' href="/esquecesenha">Esquece minha senha?</a>
                 </div>
-            
             </div>
             <div className='button'>
                 <button type='button' onClick={Logan} className="buttons">Entrar</button>
             </div>
+
             {status.mensagem && (
                 <p className={`status-message ${status.type}`}>{status.mensagem}</p>
             )}
-            
             <div className="cadastro">
                 <p>Não tem sua conta? <a href="/cadastro">Inscreva-se</a></p>
             </div>
