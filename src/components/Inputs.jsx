@@ -12,6 +12,7 @@ export default function Inputs() {
         type:'',
         mensagem:''
     }); // Estado para mensagens de status
+    
 
     
     const Logan = async ()=>{ //funcao de logar com a conexao com o banco de dados 

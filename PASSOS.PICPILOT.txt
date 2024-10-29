@@ -61,8 +61,6 @@ ENGLOBA AS INSTANCIAS DOS COMPONENTES INPUTS.JSX E LOGO.JSX
 - COMPONENTE GERAL QUE ENGLOBA TODOS OS ATRIBUTOS DA PRIMEIRA TELA (LOGIN) 
 
 
-CODIGO DA PAGINA 
-
 
 import Inputs from './Inputs'
 import Logo from './Logo'
@@ -79,4 +77,55 @@ export default function Container() {
 }
 
 NO COMPENTE INPUTS.JSX 
-CRIAMOS UMA DIV GENERICA, LOGO EM SEGUIDA UMA DIV FILHO DENOMINADA LOGIN 
+
+ import : 
+
+import '../css/Logo.css' - camada de estilo 
+import '../css/Inputs.css' -camada de estilo
+import { useRef, useState } from 'react'; - hooks 
+import { useNavigate } from 'react-router-dom'; - rotas 
+import api from '../../services/Api'; //conexao com bando de dados 
+
+
+
+export default function Inputs() {
+
+declaração de const para dinamica de logica do codigo 
+
+    const navigate = useNavigate(); //responsavel por retornar a tela de login apos o cadastro 
+    const inputEmail = useRef();//referenciando os resultado que esta vindo do nome
+    const inputPassword = useRef(); //referenciando os resultado que esta vindo do senha
+    const [status,setStatus]=useState({ //responsavel pela mensagem de sucesso e erro
+        type:'',
+        mensagem:''
+    }); // Estado para mensagens de status 
+    
+  Processo de condição para satisfazer a validação de entrada por meio de login e senha 
+
+    const Logan = async ()=>{ //funcao de logar com a conexao com o banco de dados  usando uma function async
+       
+        const isValid = validacaoLogin(); //validacao para ver se o campo nao esta em branco 
+
+        if(isValid !== true){  // condição a ser , interrompe
+            return;
+        }
+        const email = inputEmail.current.value.trim();//instanciando 
+        const password = inputPassword.current.value.trim();
+
+        try{
+            //chamada a API para fazer o login
+            const response = await api.post('/login',{email,password});
+            
+            if(response.status === 200){
+                // Navegando para a página desejada após login bem-sucedido
+                navigate('/dashboard'); // Mude para a rota correta,caso senha a pessoa certa
+            }else{
+                setStatus({type:'error',mensagem:'Credencias incorretas !'}); //status de erro de credencias
+            }
+        }catch(error){
+            setStatus({type:'error',mensagem:'erro ao fazer o login , tentar novamente !'});
+            console.error('login error:', error);
+            console.log(error)
+        }
+        
+    }
