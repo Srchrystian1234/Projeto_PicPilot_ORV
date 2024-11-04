@@ -1,39 +1,76 @@
+import img1 from '../img/1.jpeg'
+import img2 from '../img/2.jpeg'
+import img3 from '../img/3.jpg'
+import img4 from '../img/4.jpg'
+import img5 from '../img/5.jpeg'
+import img6 from '../img/6.jpg'
+import img7 from '../img/7.jpg'
+import img8 from '../img/8.jpeg'
+import img9 from '../img/9.jpg'
+
+import Logo from '../img/ORV-H1.svg'
+import MenuLateral from '../components/MenuLateral/MenuLateral'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay,Pagination,Navigation } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import '../css/Dashbord.css'
-import Picpilot from '../img/picpilot.png'
+import '../css/Logo.css'
+
+
 
 export default function Dashbord() {
   return (
     <div className='cor-de-fundo'>
-          <div className='menu-lateral'>
-            <div className='menu-lateral-sub'>
-                <div className='picpilot-orv'>PicPilot
-                  <div className='img-orv'><img src={Picpilot}/></div> 
+          <MenuLateral/>
+          <div className='orv-logo-container'>
+            <div className='logo-paragrafo'>
+                <div className='conteudo-logo'>
+                    <img src={Logo}/> 
+                    <p>
+                      Somos uma empresa de Consultoria, Arquitetura, Engenharia e Serviços Técnicos que desenvolve soluções pautadas às necessidades dos seus clientes, atuando nos mercados público e privado.</p>
                 </div>
-                <i className="bi bi-x-lg"></i>
+            </div>
+            <div className='corte-inicial'>
+            </div>
+            <div className='swipper-orv'>
+                    <Swiper
+                slidesPerView={5}
                 
-              </div>
-              <div className='menu-opcoes'>
-                  <button className='opcoes'> <i className="icon bi bi-house-fill"></i> <p className='paragrafo'>Pagina Inicial</p></button>
+                autoplay={{
+                  delay: 2900,
+                  disableOnInteraction: false,
+                }}
+                speed={2000}    
+                slidesPerGroup={5}
+                spaceBetween={1}
+                pagination={false}
+                navigation={false}
+                modules={[Autoplay,Pagination,Navigation]}
+                className="mySwiper"
+      >
 
-                  <button className='opcoes'><i className="icon bi bi-image-fill"></i> <p className='paragrafo'>Importar Imagens</p></button>
-
-                  <button className='opcoes'><i className="icon bi bi-exclamation-triangle-fill"></i> <p className='paragrafo'>Avisos</p></button>
-
-                  <button className='opcoes'><i className=" icon bi bi-hammer"></i> <p className='paragrafo'>Obras</p></button>
-
-                  <button className='opcoes'> <i className=" icon bi bi-bank2"></i> <p className='paragrafo'>Financeiro</p></button>
-
-                  <button className='opcoes'><i className=" icon bi bi-calendar-check-fill"></i> <p className='paragrafo'>Lista de Tarefas</p></button>
-
-                  <button className='opcoes'><i className="icon bi bi-calendar-event-fill"></i> <p className='paragrafo'>Calendario</p></button>
-
-                  <button className='opcoes'><i className="icon bi bi-chat-dots-fill"></i> <p className='paragrafo'>Chat</p></button>
-
-                  <button className='opcoes'><i className="icon bi bi-headset"></i> <p className='paragrafo'>Chamados</p></button>
-                  
-              </div>
-              <button className='opcoes-sair'><i className="icon-sair bi bi-box-arrow-in-left"></i> <p className='paragrafo-sair'>Sair</p></button>
+            <SwiperSlide ><img src={img1} /></SwiperSlide>
+            <SwiperSlide><img src={img2}/></SwiperSlide>
+            <SwiperSlide><img src={img3}/></SwiperSlide>
+            <SwiperSlide><img src={img4}/></SwiperSlide>
+            <SwiperSlide><img src={img5}/></SwiperSlide>
+            <SwiperSlide><img src={img6}/></SwiperSlide>
+            <SwiperSlide><img src={img7}/></SwiperSlide>
+            <SwiperSlide><img src={img8}/></SwiperSlide>
+            <SwiperSlide><img src={img9}/></SwiperSlide>
+            </Swiper>
+            </div>
+            <div className='corte-inicial1'>
+            </div>
+            <div className='footer-orv'>
+              
+            </div>
           </div>
+          
+          
     </div>
   )
 }
