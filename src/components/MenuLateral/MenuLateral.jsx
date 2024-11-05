@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import Picpilot from '../../img/picpilot.png'
+import Picpilot from '../../img/ORV-Horizontal.png'
 import '../../css/Dashbord.css'
 import '../../css/MenuLateal_css/MenuLateral.css'
-
+import Logopequena from '../../img/ORV-Horizontal.png'
 
 
 export default function MenuLateral() {
@@ -26,17 +26,16 @@ export default function MenuLateral() {
     <div className={`menu-lateral ${isExpanded? 'expanded':''}`}//fazendo codicao de se expandi ou nao
     onMouseEnter={handleMouseEnter}
     onMouseLeave={handleMouseleave}
-    
     > 
-    
-
             <div className='menu-lateral-sub'>
-                <div className='picpilot-orv'>PicPilot
-                  <div className='img-orv'><img src={Picpilot} alt='Logo'/></div> 
-                </div>
-                
-                
+              {
+                isExpanded? <div className='picpilot-orv'>PicPilot
+                <div className='img-orv'><img src={Picpilot}/></div> 
+           </div>:
+           <div className='img-logo-pequena'><img src={Logopequena}/></div>
+              }
               </div>
+
               <div className='menu-opcoes'>
                   <button className='opcoes'> <i className="icon bi bi-house-fill"></i> <p className='paragrafo'>Pagina Inicial</p></button>
 
