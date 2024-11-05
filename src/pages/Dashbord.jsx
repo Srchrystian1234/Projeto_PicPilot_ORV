@@ -1,3 +1,5 @@
+import MenuLateral from '../components/MenuLateral/MenuLateral'
+
 import img1 from '../img/1.jpeg'
 import img2 from '../img/2.jpeg'
 import img3 from '../img/3.jpg'
@@ -9,7 +11,7 @@ import img8 from '../img/8.jpeg'
 import img9 from '../img/9.jpg'
 
 import Logo from '../img/ORV-H1.svg'
-import MenuLateral from '../components/MenuLateral/MenuLateral'
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay,Pagination,Navigation } from 'swiper/modules';
 
@@ -18,10 +20,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../css/Dashbord.css'
 import '../css/Logo.css'
-
-
+import '../css/MenuLateal_css/MenuLateral.css'
 
 export default function Dashbord() {
+  
   return (
     <div className='cor-de-fundo'>
           <MenuLateral/>
@@ -73,4 +75,7 @@ export default function Dashbord() {
           
     </div>
   )
+
 }
+
+

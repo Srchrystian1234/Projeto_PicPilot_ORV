@@ -29,9 +29,18 @@ export default [
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
       'react/jsx-no-target-blank': 'off',
+      
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
+      ],
+      'react/prop-types': [
+            'error', // or 'warn' based on your preference
+            {
+                ignore: ['children'], // Example: ignoring 'children' prop
+                customValidators: [], // Add any custom validators if needed
+                skipUndeclared: false, // Change to true if you want to skip undeclared props
+            }
       ],
     },
   },

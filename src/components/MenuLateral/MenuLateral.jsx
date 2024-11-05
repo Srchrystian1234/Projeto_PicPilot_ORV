@@ -1,13 +1,40 @@
+import { useState } from 'react'
 import Picpilot from '../../img/picpilot.png'
 import '../../css/Dashbord.css'
+import '../../css/MenuLateal_css/MenuLateral.css'
+
+
+
 export default function MenuLateral() {
+
+  //componente menu lateral 
+  //menun lateal assim que passar o mouse
+  const [isExpanded,setisExpanded] = useState(false);
+
+   // Expande o menu ao passar o mouse
+   const handleMouseEnter = ()=>{
+    setisExpanded(true);//caso mouse esteja em cima da barra de menu , ele aumenta e fica vdd
+   };
+   // Recolhe o menu ao retirar o mouse
+   const handleMouseleave = ()=>{
+    setisExpanded(false);
+   };
+
   return (
-    <div className='menu-lateral'>
+    
+
+    <div className={`menu-lateral ${isExpanded? 'expanded':''}`}//fazendo codicao de se expandi ou nao
+    onMouseEnter={handleMouseEnter}
+    onMouseLeave={handleMouseleave}
+    
+    > 
+    
+
             <div className='menu-lateral-sub'>
                 <div className='picpilot-orv'>PicPilot
-                  <div className='img-orv'><img src={Picpilot}/></div> 
+                  <div className='img-orv'><img src={Picpilot} alt='Logo'/></div> 
                 </div>
-                <i className="bi bi-x-lg"></i>
+                
                 
               </div>
               <div className='menu-opcoes'>
@@ -23,7 +50,7 @@ export default function MenuLateral() {
 
                   <button className='opcoes'><i className=" icon bi bi-calendar-check-fill"></i> <p className='paragrafo'>Lista de Tarefas</p></button>
 
-                  <button className='opcoes'><i className="icon bi bi-calendar-event-fill"></i> <p className='paragrafo'>Calendario</p></button>
+                  <button className='opcoes'><i className="icon bi bi-calendar-event-fill"></i> <p className='paragrafo'>Calendário</p></button>
 
                   <button className='opcoes'><i className="icon bi bi-chat-dots-fill"></i> <p className='paragrafo'>Chat</p></button>
 
@@ -34,3 +61,4 @@ export default function MenuLateral() {
           </div>
   )
 }
+

@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+.menu-lateral{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /*padding-top: 10px;
+    padding-left: 10px; */
+    
+    background-image: linear-gradient(to bottom ,#023535,#015958,#008f8c,#0caba8,#0fc2c0);
+    width: 70px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: width 0.4s ease;
+    overflow: hidden;
+
+
+}
+
+.menu-lateral.expanded {
+    width: 250px; /* Largura quando expandido */
+}
+
+.menu-lateral-sub{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 50px;
+    width: 100%;
+
+
+}
+.picpilot-orv{
+    display: none;}
+
+
+.menu-lateral.expanded .picpilot-orv {
+    display: block;
+    background: #fff9f9;
+    width: 120px;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 2px;
+    opacity: 80%;
+    box-shadow: 4px 4px 5px 0 black;
+    font-family: "Lato";
+    font-style: italic;
+    font-weight: 700;
+    color: #615e5e;
+    
+}
+.img-orv{
+    width: 60px;
+    height: 25px;
+    display: flex;
+    
+}
+.img-orv img{
+    width: 28px;   
+    height: 17px;
+    margin: auto auto;
+    
+}
+
+
+.menu-opcoes{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   justify-content: space-evenly;
+   margin-top: 50px;
+   padding-bottom: 350px;
+   
+}
+.opcoes{
+   width: 200px;
+   height: 100px;
+   background-color: transparent;
+   outline: none;
+   border: none;
+   display: flex;
+   justify-content: left;
+   padding-left: 10px;
+   
+    
+}
+.opcoes-sair{
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+.paragrafo, .paragrafo-sair {
+    display: none;
+}
+.paragrafo{
+    width: 130px;
+    text-align: left;
+    font-family: "lato";
+    font-style: light;
+}
+.paragrafo-sair{
+    text-align: center;
+    width: 250px;
+    font-family: "lato";
+    font-style: light;
+    padding-right: 16px;
+}
+.menu-lateral.expanded .paragrafo, 
+.menu-lateral.expanded .paragrafo-sair {
+    display: inline;
+    margin-left: 10px;
+}
+
+
+.icon{
+    height:28px;
+    width: 48px;
+    font-size: 28px;
+}
+.icon-sair{
+    padding-left: 30px;
+    height:100px;
+    width: 48px;
+    font-size: 28px;
+   
+    
+}
+.menu-lateral.expanded .icon-sair{
+    padding-left: 8px;
+    height:100px;
+    width: 48px;
+    font-size: 28px;
+   
+    margin: auto auto;
+}
