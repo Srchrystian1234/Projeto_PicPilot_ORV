@@ -1,0 +1,33 @@
+.cor-de-fundo{
+      background-image: url(../../img/Fundo_importar_iamgens.jpg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+  
+}
+.orv-importar-imagem{
+    margin-left: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.orv-fundo-trans{
+    width: 1270px;
+    height: 770px;
+   
+    border-radius: 31px;
+    box-shadow: 0 1px 4px 0 black;
+    background:transparent;
+    backdrop-filter: blur(10px);
+    opacity: 95%;
+
+}
+
+.orv-fundo-trans p{
+    height: 50px;
+}
+.orv-fundo-trans button{
+    height: 50px;
+    width: 100px;
+}

@@ -1,5 +1,4 @@
 import MenuLateral from '../components/MenuLateral/MenuLateral'
-
 import img1 from '../img/1.jpeg'
 import img2 from '../img/2.jpeg'
 import img3 from '../img/3.jpg'
@@ -9,9 +8,7 @@ import img6 from '../img/6.jpg'
 import img7 from '../img/7.jpg'
 import img8 from '../img/8.jpeg'
 import img9 from '../img/9.jpg'
-
 import Logo from '../img/ORV-H1.svg'
-
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay,Pagination,Navigation } from 'swiper/modules';
@@ -52,8 +49,7 @@ export default function Dashbord() {
                 pagination={false}
                 navigation={false}
                 modules={[Autoplay,Pagination,Navigation]}
-                className="mySwiper"
-      >
+                className="mySwiper">
 
             <SwiperSlide ><img src={img1} /></SwiperSlide>
             <SwiperSlide><img src={img2}/></SwiperSlide>
@@ -71,9 +67,7 @@ export default function Dashbord() {
             <div className='footer-orv'>
               
             </div>
-          </div>
-          
-          
+          </div> 
     </div>
   )
 

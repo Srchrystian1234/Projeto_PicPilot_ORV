@@ -141,12 +141,15 @@ export default function Cadastro() {
                         <input className='input-password-repeat' type="password" name="senhaRepete"  id="senhaRepete" placeholder='Repete senha' ref={inputRepeatPas} />
                     </div>   
             </div>
+
             <div className='button'>
                 <button type='button' onClick={CreateUser} className="buttons">Cadastrar</button>
             </div>
+
             <div className="cadastro">
                 <p>Ja tenho conta? <a href="/">Login</a></p>
             </div>
+            
             { //verificando se foi sucesso ou errado , e verifica se passou pela condicao ou nao, estatos final
              status.type ===  'success' ? <p style={{height:'50px'}} className='alert alert-success text-align-center text-success fw-bold w-100' role='alert'>{status.mensagem}</p> :''
             }

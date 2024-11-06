@@ -6,7 +6,10 @@ export default function ImportarImagen() {
     <div className='cor-de-fundo'>
         <MenuLateral/>
         <div className='orv-importar-imagem'>
-          
+              <div className='orv-fundo-trans'>
+                <p><input type="file" /></p>
+                <button >ola</button>
+              </div>
         </div>
     </div>
   )
