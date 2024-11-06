@@ -120,7 +120,7 @@ export default function Cadastro() {
     <div className="container-cadastrar">
             <Logo/>  
         <form>
-            <div className="icon">
+            <div className="icon1">
                 <i className="bi bi-person-circle"></i>   
             </div>
             <div className="inputsCadastro">

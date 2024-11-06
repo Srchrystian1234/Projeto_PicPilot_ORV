@@ -7,6 +7,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import EsqueceSenha from './pages/EsqueceSenha';
 import Dashbord from './pages/Dashbord';
+import ImportarImagen from './pages/ImportarImagen';
 function App() {
  
   return (
@@ -17,6 +18,7 @@ function App() {
                   <Route path='/cadastro' element={<Cadastro/>}/>
                   <Route path='/esquecesenha' element={<EsqueceSenha/>}/>
                   <Route path='/dashbord' element={<Dashbord/>}/>
+                  <Route path='/imagem' element={<ImportarImagen/>}/>
             </Routes>
       </BrowserRouter>
     
