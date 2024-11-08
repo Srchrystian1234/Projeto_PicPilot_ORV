@@ -13,7 +13,7 @@
     
 }
 .orv-fundo-trans{
-    width: 1270px;
+    width: 1350px;
     height: 770px;
    
     border-radius: 31px;
@@ -21,6 +21,8 @@
     background:transparent;
     backdrop-filter: blur(10px);
     opacity: 95%;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -30,4 +32,58 @@
 .orv-fundo-trans button{
     height: 50px;
     width: 100px;
+}
+
+.orv-titulo-imagem{
+   
+    width:269px;
+    height: 58px;
+    margin: auto auto;
+    padding-top: 10px;
+}
+.orv-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.orv-sele-consorcio{
+    border: 1px solid black;
+    height: 680px;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    
+
+}
+
+.orv-sele-consorcio label{
+
+    padding-left: 5px;
+    height: 25px;
+    width: 210px;
+    border: 1px solid black;
+    margin: 10px;
+}
+.orv-sele-consorcio select{
+    width: 185px;
+    height: 25px;
+    margin: 10px;
+}
+.orv-lado{
+    margin-top: 10px;
+    display: flex;
+    justify-content: start;
+    height: 120px;
+}
+#data-select{
+    margin-left: 13px;
+    margin-top: 10px;
+    width: 185px;
+    height: 25px;
+}
+.orv-sele-update{
+    height: 680px;
+    width: 1000px;
+    border: 1px solid black;
 }
