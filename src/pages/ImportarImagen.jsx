@@ -64,12 +64,24 @@ export default function ImportarImagen() {
                               value={selectedDate}
                               onChange={handleDateChange}
                             />
-                           
                         </div>
 
                       </div>
-                      <div className='orv-sele-update' >
-                        
+                      <div className='orv-sele-update'>
+                        <div className='orv-container-photo'>
+                          <div className='orv-update-photo'>
+                              <label className='label-photo' htmlFor="selecionar-photo">Selecionar ou Arrasta fotos..</label>
+                              <input type="file"  id="selecionar-photo"  className='file-input' multiple accept="image/png, image/jpeg"/>
+                          </div>
+                          <div className='orv-list-photo'>
+                            
+                              <div className='orv-list-upload'>
+                                  <div className='item'><i className='bi bi-house-fill'></i></div>
+                                  <div className='item'><p>Foto de nome tal...</p></div>
+                                  <div className='item' ><i className='bi bi-check-circle-fill'></i> </div>
+                              </div>
+                          </div>
+                        </div>  
                       </div>
                   </div>
               </div>
