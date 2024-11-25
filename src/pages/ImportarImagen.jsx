@@ -2,9 +2,57 @@ import '../css/ImportarImagen_css/ImportarImagem.css'
 import '../css/Dashbord.css'
 import '../../node_modules/react-datepicker/dist/react-datepicker.css'
 import  { useState,useEffect } from "react";
+import { Providers } from "@microsoft/mgt-element";
+import { Msal2Provider } from "@microsoft/mgt-msal2-provider";
+import { Login } from '@microsoft/mgt-react';
+
+
+import {Client} from '@microsoft/microsoft-graph-client';
+
+
+
+ Providers.globalProvider = new Msal2Provider({
+    clientId: 'f60f3046-d513-4c1e-82ab-8dbe624a8710'
+  });
+
+  // Função para enviar arquivos para o OneDrive
+  async function uploadToOneDrive(file) {
+    const client = Client.initWithMiddleware({ authProvider: Providers.globalProvider });
+
+    try {
+        // Enviando o arquivo diretamente
+        const response = await client
+            .api('/me/drive/root:/meus-arquivos/' + file.name + ':/content')
+            .put(file);
+
+        console.log('Arquivo enviado com sucesso:', response);
+    } catch (error) {
+        console.error('Erro ao enviar arquivo para o OneDrive:', error);
+    }
+}
+
 
 import MenuLateral from '../components/MenuLateral/MenuLateral'
 export default function ImportarImagen() {
+
+ 
+  //estado para arquivos selecionados 
+  const [files, setFiles] = useState([]);
+
+    // Manipula o upload de arquivos
+    const handleFileUpload = (event) => {
+      const selectedFiles = event.target.files; // Obtém os arquivos selecionados
+      setFiles(selectedFiles); // Armazena os arquivos no estado
+
+      // Envia cada arquivo para o OneDrive
+      Array.from(selectedFiles).forEach(file => {
+          uploadToOneDrive(file);
+      });
+  };
+
+
+
+
     //escolha de qual consorcio awa ou social , sao elementos diferentes
     const [isConsorcio, setisConsorcio] = useState('');
 
@@ -100,17 +148,13 @@ export default function ImportarImagen() {
                         </div>
                         </>
                         }
-                        
-                        
-                        
-                        
-
+                 
                       </div>
                       <div className='orv-sele-update'>
                         <div className='orv-container-photo'>
                           <div className='orv-update-photo'>
                               <label className='label-photo' htmlFor="selecionar-photo">Selecionar ou Arrastar fotos..</label>
-                              <input type="file"  id="selecionar-photo"  className='file-input' multiple accept="image/png, image/jpeg"/>
+                              <input type="file"  id="selecionar-photo"  className='file-input' multiple accept="image/png, image/jpeg" onChange={handleFileUpload}/>
                           </div>
                           <div className='orv-list-photo'>
                             
@@ -129,12 +173,17 @@ export default function ImportarImagen() {
                                   <div className='item'><p> ARQUIVO</p></div>
                                   <div className='item' ><i className="bi bi-arrow-clockwise"></i></div>
                               </div>
+                              <Login />
                           </div>
                         </div>  
                       </div>
                   </div>
               </div>
         </div>
+
+
+       
+
     </div>
   )
 
