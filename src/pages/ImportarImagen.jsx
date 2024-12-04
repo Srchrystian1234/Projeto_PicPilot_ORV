@@ -1,6 +1,7 @@
 import '../css/ImportarImagen_css/ImportarImagem.css';
 import '../css/Dashbord.css';
 import '../../node_modules/react-datepicker/dist/react-datepicker.css';
+import logoMicrosoft from '../img/icons8-microsoft-50.png'
 import { useState, useEffect } from "react";
 import { Client } from '@microsoft/microsoft-graph-client';
 // import { InteractiveBrowserCredential } from '@azure/identity';
@@ -208,8 +209,6 @@ const handleFileUpload = async (event) => {
         <div className='orv-importar-imagem'>
               <div className='orv-fundo-trans'>
                   <div className='orv-titulo-imagem'><h2>Importar Imagens</h2></div>
-                  <button onClick={() => loginWithMicrosoft(setIsAuthenticated)}>Fazer Login com Microsoft</button>
-
                   <div className='orv-info'>
                       <div className='orv-sele-consorcio'>
                         <div className='orv-lado'><label htmlFor="consorcio-select">Selecione um consórcio :</label>
@@ -320,8 +319,11 @@ const handleFileUpload = async (event) => {
                                   </div>
                                 ))}
                               </div>
-
-                          <button onClick={() => logoutWithMicrosoft()}>Fazer Logout</button>
+                        </div>
+                        <div className='Container-login-microsoft'>
+                        {isAuthenticated === false?
+                        <button onClick={() => loginWithMicrosoft(setIsAuthenticated)}><div className='login-button-m'><img src={logoMicrosoft}/><p>Login Microsoft</p></div></button>:
+                        <button onClick={() => logoutWithMicrosoft()}><div className='login-button-m'><img src={logoMicrosoft}/><p>Sair da conta </p></div></button>}
                         </div>  
                       </div>
                   </div>
