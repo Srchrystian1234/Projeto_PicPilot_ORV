@@ -24,6 +24,11 @@ import MenuLateral from '../components/MenuLateral/MenuLateral';
 
 export default function ImportarImagen() {
   const [isConsorcio, setIsConsorcio] = useState('');
+  const [isObra,setIsObra]=useState('');
+  const [isSetor,setIsSetor]=useState('');
+  const [isSub,setISsub]=useState('');
+  const [isTitulo,setisTitulo]=useState('');
+  const [isPeriodo,setisPeriodo]=useState('');
   const [selectedDate, setSelectedDate] = useState('');
   const [arquivosEnviados, setArquivosEnviados] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -49,7 +54,7 @@ export default function ImportarImagen() {
         scopes: ["User.Read", "Files.ReadWrite"],
         prompt: "select_account", // Força a seleção da conta
       });
-      console.log("Login bem-sucedido:", loginResponse);
+      alert("Login bem-sucedido:", loginResponse);
       setIsAuthenticated(true);
     } catch (error) {
       console.error("Erro de autenticação:", error);
@@ -83,6 +88,7 @@ export default function ImportarImagen() {
     });
   };
   
+
   // Envio de Arquivo para o OneDrive
   const uploadToOneDrive = async (file, setArquivosEnviados) => {
     const client = getGraphClient();
@@ -90,18 +96,41 @@ export default function ImportarImagen() {
       console.error("Cliente não disponível");
       return;
     }
+    // Atualiza o status para 'loading' antes de iniciar o upload
+  
+  // Atualiza o status para 'loading' antes de iniciar o upload
+  // Atualiza o status para 'loading' antes de iniciar o upload
+  setArquivosEnviados((prev) =>
+    prev.map((f) => (f.name === file.name ? { ...f, status: "loading" } : f))
+  );
   
     try {
-      const response = await client
-        .api(`/me/drive/root:/uploads/${file.name}:/content`)
-        .put(file);
-  
-      console.log("Arquivo enviado com sucesso:", response);
-      setArquivosEnviados((prev) => [...prev, file.name]);
-      alert(`Arquivo "${file.name}" enviado com sucesso!`);
+      const response =isConsorcio==='awa' 
+      ? await client
+        .api(`/me/drive/root:/${isConsorcio}/${isObra}/${isSetor}/${isSub}/${selectedDate}/${file.name}:/content`)
+        .put(file)
+
+      :await client
+      .api(`/me/drive/root:/${isConsorcio}/${selectedDate}/${isTitulo}/${isPeriodo}/${file.name}:/content`)
+        .put(file)
+    
+        if (response) {
+          console.log("Arquivo enviado com sucesso:", response);
+    
+          // Atualiza o status para "success" após o upload
+          setArquivosEnviados((prev) =>
+            prev.map((f) =>
+              f.name === file.name ? { ...f, status: "success" } : f
+            )
+          );
+        }
     } catch (error) {
       console.error("Erro ao enviar arquivo para o OneDrive:", error);
-      alert(`Erro ao enviar o arquivo "${file.name}". Verifique o console.`);
+      // Atualiza o status para 'error' em caso de falha
+    // Atualiza o status para 'error' em caso de falha
+    // Atualiza o status para 'error' em caso de falha
+    setArquivosEnviados((prev) =>
+      prev.map((f) => (f.name === file.name ? { ...f, status: "error" } : f)))
     }
   };
   
@@ -120,27 +149,37 @@ const handleFileUpload = async (event) => {
     return;
   }
 
-  const selectedFiles = event.target.files;
+  const selectedFiles = Array.from(event.target.files);
   const arquivosInvalidos = [];
+  const arquivosValidos = [];
 
-  Array.from(selectedFiles).forEach((file) => {
+  // Valida os arquivos antes de qualquer envio
+  selectedFiles.forEach((file) => {
     if (file.size > 5 * 1024 * 1024) {
       arquivosInvalidos.push(`${file.name}: Tamanho excede 5MB`);
-      return;
-    }
-
-    if (!["image/png", "image/jpeg"].includes(file.type)) {
+    } else if (!["image/png", "image/jpeg"].includes(file.type)) {
       arquivosInvalidos.push(`${file.name}: Tipo inválido`);
-      return;
+    } else {
+      arquivosValidos.push({ name: file.name, file, status: "idle" }); // Adiciona ao array de válidos
     }
-
-    uploadToOneDrive(file, setArquivosEnviados);
   });
 
-  if (arquivosInvalidos.length) {
+  if (arquivosInvalidos.length > 0) {
     alert(`Os seguintes arquivos são inválidos:\n${arquivosInvalidos.join("\n")}`);
   }
+
+  if (arquivosValidos.length > 0) {
+    // Adiciona os arquivos válidos ao estado antes de iniciar o upload
+    setArquivosEnviados((prev) => [...prev, ...arquivosValidos]);
+
+    // Faz upload de cada arquivo válido
+     // Faz upload de cada arquivo válido
+     for (const arquivo of arquivosValidos) {
+      await uploadToOneDrive(arquivo.file, setArquivosEnviados); // Passa a função de update para manter o estado sincronizado
+    }
+  }
 };
+
 
   useEffect(() => {
     console.log(isConsorcio);
@@ -148,6 +187,7 @@ const handleFileUpload = async (event) => {
 
   const handleDateChange = (event) => {
     setSelectedDate(event.target.value);
+    
   };
   const logoutWithMicrosoft = async () => {
     try {
@@ -159,6 +199,7 @@ const handleFileUpload = async (event) => {
       alert("Erro ao tentar fazer logout. Veja o console para mais detalhes.");
     }
   };
+  
   
 
   return (
@@ -180,7 +221,7 @@ const handleFileUpload = async (event) => {
                         </div>
                         {isConsorcio==='awa'?<><div className='orv-lado'>
                             <label htmlFor="obra-select">Selecione uma Obra :</label>
-                            <select  id="obra-select">
+                            <select value={isObra} onChange={e => setIsObra(e.target.value)}   id="obra-select">
                             <option value="">Escolha uma opção</option>
                             <option value="obra1">Obra 1</option>
                             <option value="obra2">Obra 2</option>
@@ -188,7 +229,8 @@ const handleFileUpload = async (event) => {
                         </div>
                         <div className='orv-lado'>
                           <label htmlFor="setor-select">Selecione um Setor:</label>
-                          <select  id="setor-select">
+                          
+                          <select value={isSetor} onChange={e => setIsSetor(e.target.value)}   id="setor-select">
                             <option value="">Escolha uma opção</option>
                             <option value="engenharia">Engenharia</option>
                             <option value="seguranca">Segurança</option>
@@ -198,7 +240,7 @@ const handleFileUpload = async (event) => {
                         </div>
                         <div className='orv-lado'>
                             <label htmlFor="subpasta-select">Selecione a Subpasta:</label>
-                            <select  id="subpasta-select">
+                            <select  value={isSub} onChange={e => setISsub(e.target.value)} id="subpasta-select">
                             <option value="">Escolha uma opção</option>
                             <option value="int-urb">Int-urb</option>
                             <option value="ses">Ses</option>
@@ -229,12 +271,14 @@ const handleFileUpload = async (event) => {
                         </div>
                         <div className='orv-lado-label'>
                             <label htmlFor="local-select">Preencha com o título da Ação e Obra</label>
-                            <input type="text" name="local" id="local-select"/>
+                            <input type="text" name="local"  value={isTitulo}
+                              onChange={e => setisTitulo(e.target.value)} id="local-select" />
                             
                         </div>
                         <div className='orv-lado'>
                             <label htmlFor="periodo-select">Selecione o período:</label>
-                            <select  id="periodo-select">
+                            <select value={isPeriodo}
+                              onChange={e => setisPeriodo(e.target.value)} id="periodo-select">
                             <option value="">Escolha uma opção</option>
                             <option value="manha">Manhã</option>
                             <option value="tarde">tarde</option>
@@ -250,25 +294,34 @@ const handleFileUpload = async (event) => {
                               <label className='label-photo' htmlFor="selecionar-photo">Selecionar ou Arrastar fotos..</label>
                               <input type="file"  id="selecionar-photo"  className='file-input' multiple accept="image/png, image/jpeg" onChange={handleFileUpload}/>
                           </div>
-                          <div className='orv-list-photo'>
-                             <div className='orv-list-upload'>
-                                  <div className='item'><i className='icon bi bi-image-fill'></i></div>
-                                  <div className='item'><p> ARQUIVO</p></div>
-                                  <div className='item' ><i className='bi bi-check-circle-fill'></i> </div>
+                          <div className="orv-list-photo">
+                                {arquivosEnviados.map((arquivo, index) => (
+                                  <div key={index} className="orv-list-upload">
+                                    <div className="item">
+                                      <i className="icon bi bi-image-fill"></i>
+                                    </div>
+                                    <div className="item">
+                                      <p>{arquivo.name}</p>
+                                    </div>
+                                    <div className="item">
+                                      {arquivo.status === "success" && (
+                                        <i className="bi bi-check-circle-fill text-success"></i>
+                                      )}
+                                      {arquivo.status === "error" && (
+                                        <i className="bi bi-x-circle-fill text-danger"></i>
+                                      )}
+                                      {arquivo.status === "loading" && (
+                                        <i className="bi bi-arrow-clockwise text-warning"></i>
+                                      )}
+                                      {arquivo.status === "idle" && (
+                                        <i className="bi bi-hourglass text-secondary"></i>
+                                      )}
+                                    </div>
+                                  </div>
+                                ))}
                               </div>
-                              <div className='orv-list-upload'>
-                                  <div className='item'><i className='icon bi bi-image-fill'></i></div>
-                                  <div className='item'><p> ARQUIVO</p></div>
-                                  <div className='item' ><i className="bi bi-x-circle-fill"></i></div>
-                              </div>
-                              <div className='orv-list-upload'>
-                                  <div className='item'><i className='icon bi bi-image-fill'></i></div>
-                                  <div className='item'><p> ARQUIVO</p></div>
-                                  <div className='item' ><i className="bi bi-arrow-clockwise"></i></div>
-                              </div>
-                              
-                              <button onClick={() => logoutWithMicrosoft()}>Fazer Logout</button>
-                          </div>
+
+                          <button onClick={() => logoutWithMicrosoft()}>Fazer Logout</button>
                         </div>  
                       </div>
                   </div>
