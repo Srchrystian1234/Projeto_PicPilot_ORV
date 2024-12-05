@@ -322,7 +322,7 @@ const handleFileUpload = async (event) => {
                         </div>
                         <div className='Container-login-microsoft'>
                         {isAuthenticated === false?
-                        <button onClick={() => loginWithMicrosoft(setIsAuthenticated)}><div className='login-button-m'><img src={logoMicrosoft}/><p>Login Microsoft</p></div></button>:
+                        <button onClick={() => loginWithMicrosoft(setIsAuthenticated)}><div className='login-button-m'><img src={logoMicrosoft}/><p>Login</p></div></button>:
                         <button onClick={() => logoutWithMicrosoft()}><div className='login-button-m'><img src={logoMicrosoft}/><p>Sair da conta </p></div></button>}
                         </div>  
                       </div>

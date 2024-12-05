@@ -100,6 +100,12 @@
    padding-bottom: 350px;
    text-decoration: none;
    
+  
+}
+@media(max-width: 1900px) {
+    .menu-opcoes{
+        padding-bottom: 280px;
+    }
 }
 .opcoes{
    width: 200px;

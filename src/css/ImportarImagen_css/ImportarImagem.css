@@ -25,6 +25,156 @@
     flex-direction: column;
 
 }
+@media (min-width:1458px) and (max-width: 1900px) {
+    .orv-fundo-trans{
+        width:1200px;
+    }
+}
+@media (min-width:1200px) and (max-width: 1458px) {
+    .orv-fundo-trans{
+        width:1000px;
+    }
+}
+@media (min-width:916px) and (max-width:1199px){
+    .orv-fundo-trans{
+        width: 800px;
+        height: 800px;
+    }
+    .orv-info{
+        display: flex;
+        flex-direction: column;
+        height: 850px;
+    }
+    .orv-lado{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 240px;
+    }
+    .orv-lado-label{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+        margin-left: 240px;
+    }
+   .orv-container-photo{
+    margin-top: 10px;
+
+   }
+   .orv-update-photo{
+    margin-top: 10px;
+   }
+   .label-photo{
+    padding-bottom: 50px;
+   }
+   
+   .Container-login-microsoft{
+    margin-bottom: 7px !important;
+   }
+   .Container-login-microsoft>button{
+    width: 140px!important;
+    height: 58px !important;
+   }
+   .login-button-m img{
+    width: 40px!important;
+    height: 37px!important;
+   }
+
+
+  
+}
+@media (min-width:747px) and (max-width:916px){
+    .orv-fundo-trans{
+        width: 650px;
+    }
+    .orv-info{
+        display: flex;
+        flex-direction: column;
+        height: 850px;
+    }
+    .orv-lado{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 240px;
+    }
+    .orv-lado-label{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+        margin-left: 240px;
+    }
+    .orv-container-photo{
+        margin-top: 10px;
+    
+       }
+       .orv-update-photo{
+        margin-top: 10px;
+       }
+       .label-photo{
+        padding-bottom: 50px;
+       }
+       .Container-login-microsoft{
+        margin-bottom: 7px !important;
+       }
+       .Container-login-microsoft>button{
+        width: 140px!important;
+        height: 58px !important;
+       }
+       .login-button-m img{
+        width: 40px!important;
+        height: 37px!important;
+       }
+}
+@media  (max-width:747px){
+    .orv-fundo-trans{
+        width: 500px;
+    }
+    .orv-info{
+        display: flex;
+        flex-direction: column;
+        height: 850px;
+    }
+    .orv-lado{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 240px;
+    }
+    .orv-lado-label{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+        margin-left: 240px;
+    }
+    .orv-container-photo{
+        margin-top: 10px;
+    
+       }
+       .orv-update-photo{
+        margin-top: 10px;
+       }
+       .label-photo{
+        padding-bottom: 50px;
+       }
+       .Container-login-microsoft{
+        margin-bottom: 7px !important;
+       }
+       .Container-login-microsoft>button{
+        width: 140px!important;
+        height: 58px !important;
+       }
+       .login-button-m img{
+        width: 40px!important;
+        height: 37px!important;
+       }
+}
 
 .orv-fundo-trans p{
     height: 50px;
@@ -53,6 +203,7 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
+
     
 
 }
@@ -248,7 +399,7 @@
     outline: none;
     border: none!important;
     border-radius:10px ;
-    
+    background-color: #8da6a3;
     
 }
 .login-button-m{
@@ -262,7 +413,7 @@
 }
 .login-button-m img{
     width: 40px;
-    height: 40px;
+    height: 38px;
     margin-left: 22px;
     margin-top: 15px;
 }
@@ -273,7 +424,7 @@
     font-weight: bold;
     font-size: 15px;
     text-align: center;
-    padding-top: 12px;
+    padding-top: 20px;
 
     
 }
