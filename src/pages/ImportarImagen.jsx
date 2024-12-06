@@ -269,7 +269,7 @@ const handleFileUpload = async (event) => {
                             />
                         </div>
                         <div className='orv-lado-label'>
-                            <label htmlFor="local-select">Preencha com o título da Ação e Obra</label>
+                            <label htmlFor="local-select">Preencha com o título da Ação e Obra:</label>
                             <input type="text" name="local"  value={isTitulo}
                               onChange={e => setisTitulo(e.target.value)} id="local-select" />
                             
@@ -323,7 +323,7 @@ const handleFileUpload = async (event) => {
                         <div className='Container-login-microsoft'>
                         {isAuthenticated === false?
                         <button onClick={() => loginWithMicrosoft(setIsAuthenticated)}><div className='login-button-m'><img src={logoMicrosoft}/><p>Login</p></div></button>:
-                        <button onClick={() => logoutWithMicrosoft()}><div className='login-button-m'><img src={logoMicrosoft}/><p>Sair da conta </p></div></button>}
+                        <button onClick={() => logoutWithMicrosoft()}><div className='login-button-m'><img src={logoMicrosoft}/><p>Sair </p></div></button>}
                         </div>  
                       </div>
                   </div>
