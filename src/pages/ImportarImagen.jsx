@@ -1,5 +1,7 @@
 import '../css/ImportarImagen_css/ImportarImagem.css';
+
 import '../css/Dashbord.css';
+
 import '../../node_modules/react-datepicker/dist/react-datepicker.css';
 import logoMicrosoft from '../img/icons8-microsoft-50.png'
 import { useState, useEffect } from "react";
@@ -211,7 +213,7 @@ const handleFileUpload = async (event) => {
                   <div className='orv-titulo-imagem'><h2>Importar Imagens</h2></div>
                   <div className='orv-info'>
                       <div className='orv-sele-consorcio'>
-                        <div className='orv-lado'><label htmlFor="consorcio-select">Selecione um consórcio :</label>
+                        <div className='orv-lado'><label htmlFor="consorcio-select"><p className='pc'>Selecione um consórcio </p> <span className='mobile'>consórcio</span>:</label>
                             <select value={isConsorcio} onChange={e => setIsConsorcio(e.target.value)} id="consorcio-select">
                             <option value="">Escolha uma opção</option>
                             <option value="awa">Awa</option>
@@ -219,7 +221,7 @@ const handleFileUpload = async (event) => {
                             </select>
                         </div>
                         {isConsorcio==='awa'?<><div className='orv-lado'>
-                            <label htmlFor="obra-select">Selecione uma Obra :</label>
+                            <label htmlFor="obra-select"><p className='pc'>Selecione uma Obra </p><span className='mobile'>Obra</span> :</label>
                             <select value={isObra} onChange={e => setIsObra(e.target.value)}   id="obra-select">
                             <option value="">Escolha uma opção</option>
                             <option value="obra1">Obra 1</option>
@@ -227,7 +229,7 @@ const handleFileUpload = async (event) => {
                             </select>
                         </div>
                         <div className='orv-lado'>
-                          <label htmlFor="setor-select">Selecione um Setor:</label>
+                          <label htmlFor="setor-select"><p className='pc'>Selecione um Setor:</p><span className='mobile'>Setor</span></label>
                           
                           <select value={isSetor} onChange={e => setIsSetor(e.target.value)}   id="setor-select">
                             <option value="">Escolha uma opção</option>
@@ -238,7 +240,7 @@ const handleFileUpload = async (event) => {
                           </select>
                         </div>
                         <div className='orv-lado'>
-                            <label htmlFor="subpasta-select">Selecione a Subpasta:</label>
+                            <label htmlFor="subpasta-select"><p className='pc'>Selecione a Subpasta:</p><span className='mobile'>Subpasta</span></label>
                             <select  value={isSub} onChange={e => setISsub(e.target.value)} id="subpasta-select">
                             <option value="">Escolha uma opção</option>
                             <option value="int-urb">Int-urb</option>
@@ -249,7 +251,7 @@ const handleFileUpload = async (event) => {
                             </select>
                         </div>
                         <div className='orv-lado'>
-                        <label htmlFor="data-select">Selecione uma data:</label>
+                        <label htmlFor="data-select"><p className='pc'>Selecione uma data:</p> <span className='mobile'>Data</span></label>
                             <input
                               type="date"
                               id="data-select"
@@ -260,7 +262,7 @@ const handleFileUpload = async (event) => {
                         </>:
                         <>
                         <div className='orv-lado'>
-                        <label htmlFor="data-select">Selecione uma data:</label>
+                        <label htmlFor="data-select"><p className='pc'>Selecione uma data:</p> <span className='mobile'>Data</span></label>
                             <input
                               type="date"
                               id="data-select"

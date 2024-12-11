@@ -1,6 +1,9 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap'
+import "react-app-polyfill/stable";
+import "react-app-polyfill/ie11"; // Se você precisa suportar o IE11
+
 import Cadastro from './pages/Cadastro';
 import Container from './components/Container';
 import 'bootstrap-icons/font/bootstrap-icons.css';

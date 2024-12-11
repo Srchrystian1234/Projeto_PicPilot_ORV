@@ -17,6 +17,7 @@
     justify-content: space-between;
     transition: width 0.5s ease;
     overflow: hidden;
+    
 
 
 }
@@ -102,11 +103,27 @@
    
   
 }
+
+
 @media(max-width: 1900px) {
     .menu-opcoes{
         padding-bottom: 280px;
     }
 }
+@media (min-height:702px)and  (max-height:794px){
+    .menu-opcoes{
+        padding-bottom: 200px;
+    }
+}
+@media (min-height:600px) and  (max-height:702px) {
+    .menu-opcoes{
+        padding-bottom: 120px;
+    }
+   
+}
+
+
+
 .opcoes{
    width: 200px;
    height: 100px;
