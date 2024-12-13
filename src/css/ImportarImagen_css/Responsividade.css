@@ -1,0 +1,437 @@
+@media (min-width:1458px) and (max-width: 1900px) {
+    .mobile{
+        display: none;
+    }
+    .orv-lado>label>.pc{
+        padding-right: 80px;
+        width: 270px;
+        margin-left: -1px;
+        text-align: start;
+    }
+    .orv-fundo-trans{
+        width:1200px;
+    }
+}
+@media (min-width:1200px) and (max-width: 1458px) {
+    .orv-fundo-trans{
+        width:1000px;
+    }
+    .mobile{
+        display: none;
+    }
+    .orv-lado>label>.pc{
+        padding-right: 80px;
+        width: 270px;
+        margin-left: -1px;
+        text-align: start;
+    }
+}
+@media (min-width:916px) and (max-width:1199px){
+    .mobile{
+        display: none;
+    }
+    .orv-lado>label>.pc{
+        padding-right: 80px;
+        width: 270px;
+        margin-left: -1px;
+        text-align: start;
+    }
+    .orv-titulo-imagem{
+        padding-top: 3px !important;
+    }
+    .orv-sele-update{
+        height: 772px !important;
+    }
+    .orv-fundo-trans{
+        width: 800px;
+        height: 840px;
+
+    }
+    .orv-info{
+        display: flex;
+        flex-direction: column;
+        height: 850px;
+    }
+    .orv-lado{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 240px;
+    }
+    .orv-lado-label{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+        margin-left: 240px;
+    }
+   .orv-container-photo{
+    margin-top: 10px;
+
+   }
+   .orv-update-photo{
+    margin-top: 10px;
+   }
+   .label-photo{
+    padding-bottom: 50px;
+   }
+   
+   .Container-login-microsoft{
+    margin-bottom: 7px !important;
+   }
+   .Container-login-microsoft>button{
+    width: 120px!important;
+    height: 55px !important;
+   }
+   .login-button-m img{
+    width: 40px!important;
+    height: 35px!important;
+    
+    margin-top: 10px !important;
+   }
+   .login-button-m p{
+    padding-top: 15px !important;
+   }
+   .orv-list-upload .item {
+    margin-top: 0 !important;
+   }
+
+
+  
+}
+@media (min-width:747px) and (max-width:916px){
+    .orv-titulo-imagem{
+        text-align: center;
+    }
+    .mobile{
+        display: none;
+    }
+    
+    .orv-lado>label>.pc{
+        padding-right: 80px;
+        width: 270px;
+        margin-left: -1px;
+        text-align: start;
+    }
+    .orv-fundo-trans{
+        width: 650px;
+        height: 640px;
+    }
+    .orv-info{
+        display: flex;
+        flex-direction: column;
+        height: 850px;
+    }
+    .orv-lado{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .orv-lado-label>label {
+        height:30px;
+       
+    }
+    .orv-lado-label input{
+        height: 25px;
+        margin-top: 4px;
+    }
+    .orv-lado-label{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        margin-left: 274px;
+        
+    }
+    .orv-container-photo{
+        margin-top: 10px;
+    
+    }
+    .orv-update-photo{
+        margin-top: 10px;
+    }
+    .label-photo{
+        padding-bottom: 50px;
+    }
+    .Container-login-microsoft{
+        margin-bottom: 7px !important;
+       }
+       .Container-login-microsoft>button{
+        width: 120px!important;
+        height: 55px !important;
+       }
+       .login-button-m img{
+        width: 40px!important;
+        height: 35px!important;
+        
+        margin-top: 10px !important;
+       }
+       .login-button-m p{
+        padding-top: 15px !important;
+       }
+       .orv-list-upload .item {
+        margin-top: 0 !important;
+       }
+       .orv-sele-update{
+        height: 772px !important;
+    }
+}
+@media (min-width:650px) and (max-width:747px){
+    .orv-titulo-imagem{
+        text-align: center;
+    }
+    .mobile{
+        display: block;
+        text-align: center;
+    }
+   
+    .orv-lado>label>.pc{
+        display: none;
+       
+    }
+    .orv-lado-label>label>.pc-1{
+        display: none;
+    }
+    .orv-lado label{
+        width: 150px;
+    }
+    .orv-fundo-trans{
+        width: 500px;
+        height: 630px;
+    }
+    .orv-info{
+        display: flex;
+        flex-direction: column;
+        height: 850px;
+    }
+    .orv-lado{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+        
+    }
+    .orv-lado-label{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        margin-left: 305px;
+    }
+    .orv-lado-label input{
+        width: 419px !important;
+    }
+    .orv-container-photo{
+        margin-top: 10px;
+        width: 450px !important;
+    
+    }
+    .orv-update-photo{
+    margin-top: 10px;
+   
+    }
+    .label-photo{
+    padding-bottom: 50px;
+    }
+    .Container-login-microsoft{
+        margin-bottom: 7px !important;
+       }
+       .Container-login-microsoft>button{
+        width: 120px!important;
+        height: 50px !important;
+        margin-bottom: 10px !important;
+       }
+       .login-button-m img{
+        width: 40px!important;
+        height: 35px!important;
+        
+        margin-top: 10px !important;
+       }
+       .login-button-m p{
+        padding-top: 15px !important;
+       }
+       .orv-list-upload .item {
+        margin-top: 0 !important;
+       }
+}
+
+@media (min-width:592px) and (max-width:650px){
+    .orv-titulo-imagem{
+        text-align: center;
+    }
+    .mobile{
+        display: block;
+        text-align: center;
+    }
+   
+    .orv-lado>label>.pc{
+        display: none;
+       
+    }
+    .orv-lado-label>label>.pc-1{
+        display: none;
+       
+    }
+    .orv-lado label{
+        width: 120px !important;
+    }
+   
+    .orv-fundo-trans{
+        width: 500px;
+        height: 620px;
+    }
+    .orv-info{
+        display: flex;
+        flex-direction: column;
+        height: 850px;
+    }
+    .orv-lado{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+        
+    }
+    .orv-lado-label{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        margin-left: 319px;
+    }
+    .orv-lado-label input{
+        width: 329px !important;
+    }
+    .orv-container-photo{
+        margin-top: 10px;
+        width: 450px !important;
+    
+    }
+    .orv-update-photo{
+    margin-top: 10px;
+    }
+    .label-photo{
+    padding-bottom: 50px;
+    }
+    .Container-login-microsoft{
+    margin-bottom: 7px !important;
+    }
+    .Container-login-microsoft>button{
+        width: 120px!important;
+        height: 50px !important;
+        margin-bottom: 10px !important;
+       }
+    .login-button-m img{
+    width: 40px!important;
+    height: 35px!important;
+    
+    margin-top: 10px !important;
+    }
+    .login-button-m p{
+    padding-top: 15px !important;
+    }
+    .orv-list-upload .item {
+    margin-top: 0 !important;
+    }
+
+
+}
+@media (max-width:592px){
+    .orv-titulo-imagem{
+        text-align: center;
+    }
+    .mobile{
+        display: block;
+        text-align: center;
+    }
+    
+    .orv-sele-consorcio{
+        width: 400px!important;
+    }
+
+    .orv-lado>label>.pc{
+        display: none;
+       
+    }
+    .orv-lado-label>label>.pc-1{
+        display: none;
+       
+    }
+    .orv-lado label{
+        width: 120px !important;
+    }
+   
+    .orv-fundo-trans{
+        width: 450px;
+        height: 600px;
+    }
+    .orv-info{
+        display: flex;
+        flex-direction: column;
+        height: 850px;
+    }
+    .orv-lado{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+        
+    }
+    .orv-lado-label{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        margin-left: 15px;
+
+    }
+    .orv-lado-label input{
+        width: 329px !important;
+        margin-bottom: 2px;
+    }
+  
+
+    .orv-container-photo{
+        margin-top: 10px;
+        width: 450px !important;
+    
+    }
+    .orv-update-photo{
+    margin-top: 10px;
+    }
+    .label-photo{
+    padding-bottom: 50px;
+    }
+    .Container-login-microsoft{
+        margin-bottom: 7px !important;
+       }
+       .Container-login-microsoft>button{
+        width: 120px!important;
+        height: 50px !important;
+        margin-bottom: 10px !important;
+       }
+       .login-button-m img{
+        width: 40px!important;
+        height: 35px!important;
+        
+        margin-top: 10px !important;
+       }
+       .login-button-m p{
+        padding-top: 15px !important;
+       }
+       .orv-list-upload .item {
+        margin-top: 0 !important;
+       }
+       .orv-container-photo{
+        width: 400px !important;
+       }
+       .orv-update-photo{
+        width: 350px !important;
+       }
+
+
+}
+

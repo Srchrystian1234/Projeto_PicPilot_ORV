@@ -1,4 +1,5 @@
 import '../css/ImportarImagen_css/ImportarImagem.css';
+import '../css/ImportarImagen_css/Responsividade.css';
 
 import '../css/Dashbord.css';
 
@@ -213,7 +214,7 @@ const handleFileUpload = async (event) => {
                   <div className='orv-titulo-imagem'><h2>Importar Imagens</h2></div>
                   <div className='orv-info'>
                       <div className='orv-sele-consorcio'>
-                        <div className='orv-lado'><label htmlFor="consorcio-select"><p className='pc'>Selecione um consórcio </p> <span className='mobile'>consórcio</span>:</label>
+                        <div className='orv-lado'><label htmlFor="consorcio-select"><p className='pc'>Selecione um consórcio </p> <span className='mobile'>Consórcio</span>:</label>
                             <select value={isConsorcio} onChange={e => setIsConsorcio(e.target.value)} id="consorcio-select">
                             <option value="">Escolha uma opção</option>
                             <option value="awa">Awa</option>
@@ -271,13 +272,13 @@ const handleFileUpload = async (event) => {
                             />
                         </div>
                         <div className='orv-lado-label'>
-                            <label htmlFor="local-select">Preencha com o título da Ação e Obra:</label>
+                            <label htmlFor="local-select"><p className='pc-1'>Preencha com o título da Ação e Obra:</p><span className='mobile'>Ação e Obra</span></label>
                             <input type="text" name="local"  value={isTitulo}
                               onChange={e => setisTitulo(e.target.value)} id="local-select" />
                             
                         </div>
                         <div className='orv-lado'>
-                            <label htmlFor="periodo-select">Selecione o período:</label>
+                            <label htmlFor="periodo-select"><p className='pc'>Selecione o período:</p><span className='mobile'>Período</span></label>
                             <select value={isPeriodo}
                               onChange={e => setisPeriodo(e.target.value)} id="periodo-select">
                             <option value="">Escolha uma opção</option>
