@@ -252,7 +252,7 @@ const handleFileUpload = async (event) => {
                             </select>
                         </div>
                         <div className='orv-lado'>
-                        <label htmlFor="data-select"><p className='pc'>Selecione uma data:</p> <span className='mobile'>Data</span></label>
+                        <label htmlFor="data-select" ><p className='pc'>Selecione uma data:</p> <span className='mobile'>Data</span></label>
                             <input
                               type="date"
                               id="data-select"

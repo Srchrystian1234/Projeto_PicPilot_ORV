@@ -40,7 +40,7 @@ export default function MenuLateral() {
 
                   <a className='opcoes' href='/imagem'><i className="icon bi bi-image-fill"></i><p className='paragrafo'>Importar Imagens</p></a>
 
-                  <button className='opcoes'><i className="icon bi bi-exclamation-triangle-fill"></i><p className='paragrafo'>Avisos</p></button>
+                  <button className='opcoes'><i className="icon bi bi-exclamation-triangle-fill"></i><p className='paragrafo'>Reclamação</p></button>
 
                   <button className='opcoes'><i className="icon bi bi-hammer"></i><p className='paragrafo'>Obras</p></button>
 
