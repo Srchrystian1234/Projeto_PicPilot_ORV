@@ -171,40 +171,47 @@
     
 }
 .orv-list-photo{
-   
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    align-items: center;
-    width: 500px;
-    height: 300px;
-   
+    width: 500px; /* Largura fixa */
+  max-height: 220px; /* Altura suficiente para 4 itens de 50px + margem */
+  overflow-y: auto; /* Ativa rolagem vertical */
+  overflow-x: hidden; /* Evita rolagem horizontal */
+  display: flex;
+  flex-direction: column; /* Organiza os itens verticalmente */
+  gap: 5px; /* Espaço entre os itens */
+  padding: 5px;
+  box-sizing: border-box;
+ 
 }
 .orv-list-upload{
+   
     display: flex;
-    width: 400px;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3px;
+    justify-content: space-between; /* Espaçamento entre os elementos */
+    align-items: center; /* Centraliza os itens verticalmente */
+    height: 100px; /* Altura fixa para cada item */
+    background-color: #7c9a94; /* Cor de fundo */
+    color: #fff;
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px;
+    box-sizing: border-box;
+    
 
 }
+
+.orv-list-upload:last-child {
+    margin-bottom: 0; /* Remove margem do último item */
+  }
 .orv-list-upload .item{
-    
-    margin-top: 15px ;
-    width: 133px;
-    height: 50px;
-    background-color: #7c9a94;
-    opacity: 80%;
-
-
+    height:600px !important;
     display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
+  flex: 1; /* Ocupa espaço proporcional */
+  text-align: center;
 }
 
 .item p{
-    padding-top: 20px;
+    margin: 0;
+    font-size: 14px;
     
     
 }
