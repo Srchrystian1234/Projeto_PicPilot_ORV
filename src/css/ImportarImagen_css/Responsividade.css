@@ -250,7 +250,7 @@
     }
     .orv-container-photo{
         margin-top: 10px;
-        width: 450px !important;
+        width: 465px !important;
     
     }
     .orv-update-photo{
@@ -337,8 +337,11 @@
     }
     .orv-container-photo{
         margin-top: 10px;
-        width: 450px !important;
+        width: 460px !important;
     
+    }
+    .orv-list-photo{
+        margin-left:10px ;
     }
     .orv-update-photo{
     margin-top: 10px;
@@ -439,6 +442,10 @@
         width: 450px !important;
     
     }
+    .orv-list-photo{
+        width: 400px;
+        margin-left: 2px;
+    }
    
     .orv-update-photo{
     margin-top: 10px;
@@ -495,7 +502,7 @@
         height: 500px;
     }
     .orv-container-photo{
-        width: 460px;
+        width: 470px;
     }
     .orv-update-photo{
         margin-top: 10px;

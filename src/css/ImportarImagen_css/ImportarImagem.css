@@ -149,6 +149,7 @@
     opacity: 90%;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
     transform-origin: center top;
+    margin-bottom: 5px;
 }
 
 .orv-update-photo:hover{
@@ -170,28 +171,47 @@
     color: black;
     
 }
+
 .orv-list-photo{
-    width: 500px; /* Largura fixa */
-  max-height: 220px; /* Altura suficiente para 4 itens de 50px + margem */
-  overflow-y: auto; /* Ativa rolagem vertical */
-  overflow-x: hidden; /* Evita rolagem horizontal */
+ width: 443px; /* Largura fixa */
+  max-height: 266px; /* Altura suficiente para 4 itens de 50px + margem */
+  overflow-y: auto;
   display: flex;
   flex-direction: column; /* Organiza os itens verticalmente */
   gap: 5px; /* Espaço entre os itens */
   padding: 5px;
   box-sizing: border-box;
- 
+  margin-left:20px ;
 }
+.orv-list-photo::-webkit-scrollbar {
+    width: 15px; /* Largura da barra de rolagem */
+  }
+  .orv-list-photo::-webkit-scrollbar-track {
+    background: #888 #f1f1f1; /* Cor de fundo da track */
+    border-radius: 10px;
+  }
+  .orv-list-photo::-webkit-scrollbar-thumb {
+    background-color: linear-gradient(180deg, #aaa, #888); /* Cor da "thumb" */
+    border-radius: 10px;
+    border: 2px solid #f1f1f1; /* Espaço entre a thumb e a track */
+  }
+  .orv-list-photo::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Cor ao passar o mouse */
+  }
+
+
+
 .orv-list-upload{
-   
+  
     display: flex;
     justify-content: space-between; /* Espaçamento entre os elementos */
     align-items: center; /* Centraliza os itens verticalmente */
-    height: 100px; /* Altura fixa para cada item */
+    height: 200px; /* Altura fixa para cada item */
+    width: 417px;
     background-color: #7c9a94; /* Cor de fundo */
     color: #fff;
     border-radius: 5px; /* Bordas arredondadas */
-    padding: 10px;
+    padding: 30px;
     box-sizing: border-box;
     
 
@@ -201,19 +221,18 @@
     margin-bottom: 0; /* Remove margem do último item */
   }
 .orv-list-upload .item{
-    height:600px !important;
+    height:600px ;
     display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1; /* Ocupa espaço proporcional */
-  text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* Ocupa espaço proporcional */
+     text-align: center;
 }
 
 .item p{
     margin: 0;
     font-size: 14px;
-    
-    
+    padding: 10px;    
 }
 .bi-check-circle-fill{
 
